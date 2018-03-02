@@ -1,24 +1,28 @@
 DDoS Thesis:  
 1. [Introduction](#introduction)  
-2. [Our Project:](#default-arguments-es5)  
-3. [Our Goal:](#default-arguments-es6)  
-4. [Practical Overview:](#practice)
+2. [Dependencies:](#dependencies)  
+3. [Running The Client Requests:](#running-the-client-requests)
+2. [Troubleshooting:](#troubleshooting)
 
 ## Introduction
-DoS attacks are attempts to exhaust server-side assets and designed to prevent client-to-server communication (denial of service). Simply, we can say that stealth server sabotage wires or even the server is denial of service, but in the context of data security we discuss about remote attacks and not physical sabotaging.  
+The client module defines a very effective attacker end-point, which pushes huge amount of requests for the server.
 
-DDoS attacks are very similar and sometimes even identical, and their intention is Distributed Denial of Service. In other words, the attack comes not from a single source, but from a large number of end stations – usually triggered by the attacker in the form of a king of virus located on these end stations. Most DDoS attacks are much more powerful and significant. It is important to understand that even an attack by two or three end stations is usually considered as a DoS attack, since there is really no significant flooding of the server.
+## Dependencies:
+Node version ^8.7.0  
+Python version 2.7.0
 
-## Our Project:
-Our project deals with understanding and examining DoS and DDoS attacks, and what are the solutions for them. In particularly, we will discuss and handle with traffic flood attacks on web servers (within Application Layer - OSI), and will try to develop our own software or algorithm to block or to give any immediately pragmatic solution.
-
-
-## Our Goal:
-Our main goal is to develop an automatic open-source system that would identify and analyze a traffic flood attack, defend the server from it, and in need - will block any Internet Protocol (IP) or sub-net which the flood comes from. Our system should run on a Content delivery network (CDN) instead of on the server in order to save the server’s performances providing service
-
-
-## Practical Overview:
-In this repo, you might find about our modules that demonstrating our various parts of the research:  
-* Main Server
-* CDN Server
-* Client sides (both regular and attacker)
+## Running The Client Requests:
+-------------------------------------------------------- Maor here you should insert how to run the python file. (including flags etc.)
+## Troubleshooting:
+In case that you've got the following error:
+```
+events.js:
+      throw er; // Unhandled 'error' event
+      ^
+Error: listen EADDRINUSE
+```
+It means that you have another node process which is already running the same file or the PORT (either the default or the chosen port) is in use. If you still want to the server, be sure that no node process is running a important task, and try running:
+```
+sudo killall node
+```
+It should ask for a password and close any node process. Now you would be able to run the server.
